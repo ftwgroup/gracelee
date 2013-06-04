@@ -1,0 +1,30 @@
+{% load compressed %}
+
+{% block extra_css %}
+
+{% compressed_css 'index' %}
+
+{% endblock %}
+
+{% block nav%}
+<div class="row" id="nav_fill">
+	<div class="nav">
+		<div class="home-link text-center" id="glm_link">
+			<a href="index.html"><span id="logo_text">Grace Lee</span>
+				<span id="m_kerning">Makeup</span> </a>
+			</div>
+			<div class="nav-letters">
+				<div class="nav-margin nav-letter" id="nav_w">
+					<a class="nav-font"href="#">W</a>
+				</div>
+				<div class="nav-margin nav-letter" id="nav_int_m">
+					<a class=" m-active"href="#"><span class="nav-font-descriptive">MEN</span></a>
+					<a class=" m-active nav-font-active" href="graceInternal.html">M</a>
+				</div>
+				<div class="nav-margin nav-letter" id="nav_sfx">
+					<a class="nav-font" href="#">SFX</a>
+				</div>
+			</div>
+		</div><!--nav-->
+</div><!--row-->
+{% endblock %}

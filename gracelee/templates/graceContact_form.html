@@ -1,0 +1,24 @@
+{# {% extends "site_base.html" %} #}
+{% block extra_css %}
+
+{% compressed_css 'index' %}
+
+{% endblock %}
+
+{% block contactForm %}
+
+        <div class="contact-form">
+          <h2 id="contact_header">Contact Me</h2>
+          <p>Call Grace Lee at 555-555-5555 or message me through email </p>
+          <form class="form" name="input" action="html_form_action.asp" method="get">
+            <label>Name</label>
+            <input class="input-margin-l" id="input_name"type="text" placeholder="Name"><br>
+            <label>Email</label>
+            <input class="input-margin-l" id="input_email"type="text" placeholder="Email"><br>
+            <label>Message</label>
+            <input class="input-margin-l" id="input_message" type="text" placeholder="Message"><br>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+
+{% endblock %}

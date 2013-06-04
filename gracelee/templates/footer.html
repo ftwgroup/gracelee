@@ -1,0 +1,19 @@
+{% load compressed %}
+
+
+{% block extra_css %}
+
+{% compressed_css 'index' %}
+
+{% endblock %}
+
+{% block footer %}
+    <footer>
+    	<div class="row-fluid gl-foot-text">
+    		<span id="contact"><a href="graceContact_form.html">Contact Grace</a></span>
+    		<span id="address">44 Street Los Angelos, CA 99011</span>
+    		<span><a id="button_imdb" href="http://www.imdb.com/name/nm3300616/"><img src="{{ STATIC_URL }}img/gl-logo-imdb.png"></a></span>
+            <span><a id="button_instagram" href="http://instagram.com/graceleemakeup/#"><img src="{{ STATIC_URL }}img/gl-logo-instagram.png"></a></span>
+        </div>
+    </footer>
+{% endblock %}

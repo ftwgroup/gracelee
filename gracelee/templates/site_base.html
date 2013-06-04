@@ -1,0 +1,48 @@
+{% load compressed %}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="{{ feincms_page.meta_description }}" />
+    <meta name="keywords" content="{{ feincms_page.meta_keywords }}" />
+    <title>{{ feincms_page.page_title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% compressed_css 'bootstrap' %}
+    <!-- above is the django-pipeline css -->
+
+
+    {% block extra_css %}
+
+{% compressed_css 'index' %}
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" media="screen" type="text/css"  />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/gracelee.css" media="screen" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}bootstrap/css/boostrap.css" media="screen" type="text/css">
+
+    {% endblock %}
+
+    
+</head>
+<body>
+
+
+{% include "nav.html" %}
+
+{% block main %}
+
+{% endblock main %}
+
+{% include "footer.html" %}
+
+
+
+{% block extra_js %}
+
+{% endblock %}
+
+</body>
+</html>
+
+

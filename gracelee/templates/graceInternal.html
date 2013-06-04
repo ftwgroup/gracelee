@@ -1,0 +1,45 @@
+{% extends "site_base.html" %}
+{% load compressed %}
+
+{% block extra_css %}
+
+{% compressed_css 'home_page' %}
+
+
+{% endblock %}
+
+
+{% block main %}
+    	<hr class="gl-hr">
+    	<div class="wrap-internal">
+    		<div class="row-fluid" id="photo_body">
+    			<div class="main-content">
+    				<div class="span2 offset1" id="photo_roll">
+    					<li><img class="thumb-active"src="{{ STATIC_URL }}img/gl-thumb-one.jpg"></li>
+    					<li><img class="thumb-border"src="{{ STATIC_URL }}img/gl-thumb-2.jpg" alt="thumbs"></li>
+    					<li><img class="thumb-border"src="{{ STATIC_URL }}img/gl-thumb-one.jpg"></li>
+    					<li><img class="thumb-border"src="{{ STATIC_URL }}img/gl-thumb-2.jpg" alt="thumbs"></li>
+    				</div><!--photo_roll-->
+    				<div class="span6 offset2" id="main_photo">
+    					<img src="{{ STATIC_URL }}img/gl-demo-m.jpg" alt="Current Photo">
+    				</div>
+    			</div><!--main content-->
+    		</div><!--row-->
+        <div class="contact-form">
+          <h2 id="contact_header">Contact Me</h2>
+          <p>Call Grace Lee at 555-555-5555 or message me through email </p>
+          <form class="form" name="input" action="html_form_action.asp" method="get">
+            <label>Name</label>
+            <input class="input-margin-l" id="input_name"type="text" placeholder="Name"><br>
+            <label>Email</label>
+            <input class="input-margin-l" id="input_email"type="text" placeholder="Email"><br>
+            <label>Message</label>
+            <input class="input-margin-l" id="input_message" type="text" placeholder="Message"><br>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+        <hr class="gl-hr">
+    	</div><!--wrap-->
+
+
+    {% endblock %}

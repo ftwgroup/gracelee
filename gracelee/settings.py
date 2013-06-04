@@ -1,6 +1,6 @@
 import os
 
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__name__))
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 print PROJECT_ROOT
 
 DEBUG = True
@@ -65,7 +65,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'assets'),
+    os.path.join(PROJECT_ROOT, 'staticfiles'),
 )
 
 # List of finder classes that know how to find static files in
@@ -113,6 +113,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'photo_gallery',
+    'pipeline',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -143,3 +144,12 @@ LOGGING = {
         },
     }
 }
+try:
+    from local_settings import *
+except ImportError:
+    pass
+
+try:
+    from pipeline_settings import *
+except ImportError:
+    pass
