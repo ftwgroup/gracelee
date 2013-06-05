@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Image Uploader</title>
+	<link rel="stylesheet" href="{{ STATIC_URL }}imageuploader.css">
+	<!--- IMPORT DJANGO -->
+</head>
+
+<body>
+
+<div id="menu">
+	<h1><a href="/deleteserver/">
+		Delete an Image</a> | 
+		<a href="/createserver/">
+		Upload an Image</a>
+</div>
+
+<div id="wrap">
+	<h1>Create New Image:</h1>
+		<form action="/upload_file/" method="POST">{% csrf_token %}
+		{{ new_image.as_p }}
+		<input type="submit" value="Submit" />
+		</form>
+
+</div><!--- wrap div -->
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 import os
 
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__name__))
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 print PROJECT_ROOT
 
 DEBUG = True

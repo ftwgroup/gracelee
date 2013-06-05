@@ -1,0 +1,16 @@
+body{
+	text-align: center;
+	padding: 50px 0px 50px 0px;
+	border: 1px solid red;
+}
+
+#menu h1{
+	font-size: 15px;
+	padding-bottom: 60px;
+	border: 1px solid blue;
+}
+
+#wrap h1{
+	font-size: 20px;
+	border: 1px solid green;
+}
