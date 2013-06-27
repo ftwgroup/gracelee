@@ -1,4 +1,9 @@
 from django.test import TestCase
+from django.test.client import Client
+from photo_gallery.models import UploadFile
+from photo_gallery.views import image_resize, image_crop, domain_path, parse_url, ensure_dir, image_info
+from django.http import Http404
+import re
 
 
 class GraceLeeTest(TestCase):
@@ -7,54 +12,36 @@ class GraceLeeTest(TestCase):
 		UploadFile.objects.create(image="photo.jpg", comment="first photo")
 		UploadFile.objects.create(image="picture.jpg", comment="second photo")
 		UploadFile.objects.create(image="image.jpg", comment="third photo")
+		#
+	def test_parse_url(self):
+		url = 'http://businessnetworking.com/uploads/2012/happy-face.jpg'
+		pattern = re.compile(r'^http://([^/\r\n]+)/([^\r\n]*)$')
+		matcher = pattern.match(url)
+		domain_name = matcher.group(1)
+		self.assertRegexpMatches(url, pattern)
+		self.assertTrue(matcher.group(1) == 'businessnetworking.com')
+		self.assertTrue(matcher.group(2) == '/uploads/2012/happy-face.jpg')
+		# in a specific format?
+		#
+	def test_domain_path(self):
+		# is the correct format being concatenated?
+		pass
 
-	def test_image_db(self):
-		first = UploadFile.objects.get("photo.jpg")
-		second = UploadFile.objects.get("picture.jpg")
-		third = UploadFile.objects.get("image.jpg")
+	def test_get_image(self):
+		remote_url = 'http://fredtopeka.files.wordpress.com/2012/10/693952main_pia15817-full_full.jpg'
+		local_url = 'http://50X50/businessnetworking.com/wp-content/uploads/2012/04/happy-face.jpg/'
+		false_url = 'http://20x20/falseurl.net/fakepicture.jpg'
 		
-		self.assertEqual(first.img_comment(), 'first img')
-		self.assertEqual(second.img_comment(), 'second img')
-		self.assertEqual(third.img_comment(), 'third img')
+		pass
 
-	# tears the test down
-	def tearDown(self):
-		self.fixture
-
-
-	# checks to see if imagelist returns any data
-	def test_image_info(self):
-		check_imagelist = imagelist[::]
-		self.assertIsNotNone(imagelist)
-
-	# checks if image is stored and resized
+	def test_ensure_dir(self):
+		pass
+		
 	def test_image_resize(self):
-		# is the images url split?
-		# cropped url set up properly?
-
-		# test static serve request
-		# recieves original image
-		# stores original image
-		# recieves new size
-		# stores new size
-		# returns new image
-
+		pass
+		
 	def test_image_crop(self):
-		# test static serve request
-		# test is images exist in the DOCUMENT_ROOT
-		# test if new image is cropped
-		# test if cropped image is saved
-		# test is image is returned
-
-
-if __name__ == '__main__':
-	unittest.main()
-
-
-
-
-
-
+		pass
 
 
 
